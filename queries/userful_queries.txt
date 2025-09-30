@@ -1,0 +1,49 @@
+GetRandomUser(userIsAuthor: String!): User
+
+GetUserBySlug(slug: String!): User
+
+PostAnalytics(postId: String!): PostAnalyticsResult!
+
+PostsUserCommentedOn(
+limit: Int
+filter: PostReviewFilter
+sort: PostReviewSort
+): UserReadHistoryResult
+
+posts(
+selector: PostSelector
+limit: Int
+offset: Int
+enableTotal: Boolean
+): MultiPostOutput
+
+comments(
+selector: CommentSelector
+limit: Int
+offset: Int
+enableTotal: Boolean
+): MultiCommentOutput
+
+
+
+
+
+
+
+VARIABLES
+
+
+{
+  "slug": "adam-zerner",
+  "limit": 20,
+  "filter": {
+    "startDate": "2000-01-01",
+    "endDate": "2025-09-29",
+    "minKarma": -100,
+    "showEvents": false
+  },
+  "sort": {"karma": true},
+  "userId": "eLKPdygHtBCmkMiYj",
+  "offset": 0,
+  "enableTotal": true,
+}

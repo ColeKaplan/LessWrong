@@ -1,0 +1,9 @@
+One file should take people's basic numbers (posts, comments, time on site, karma, amount donated)
+- Do people with more posts have better average karma per post
+- Do the very top posters and top commenters overlap
+- Are the people with top donations also top karma
+- Do the top posters still have bad posts (low or negative karma)
+
+Another file for clustering users based on interactions
+- Should color them based on the 6 Core Concepts
+- See if people mostly interact within their subdomain or not

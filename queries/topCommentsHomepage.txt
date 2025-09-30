@@ -1,0 +1,222 @@
+query multiCommentQuickTakesSectionQuery(
+  $selector: CommentSelector, 
+  $limit: Int, 
+  $enableTotal: Boolean
+) {
+  comments(selector: $selector, limit: $limit, enableTotal: $enableTotal) {
+    results {
+      ...ShortformComments
+      __typename
+    }
+    totalCount
+    __typename
+  }
+}
+
+fragment ShortformComments on Comment {
+  ...CommentsList
+  post {
+    ...PostsMinimumInfo
+    __typename
+  }
+  relevantTags {
+    ...TagPreviewFragment
+    __typename
+  }
+  __typename
+}
+
+fragment CommentsList on Comment {
+  _id
+  postId
+  tagId
+  tag {
+    _id
+    slug
+    __typename
+  }
+  relevantTagIds
+  relevantTags {
+    ...TagPreviewFragment
+    __typename
+  }
+  tagCommentType
+  parentCommentId
+  topLevelCommentId
+  descendentCount
+  title
+  contents {
+    _id
+    html
+    plaintextMainText
+    wordCount
+    __typename
+  }
+  postedAt
+  lastEditedAt
+  repliesBlockedUntil
+  userId
+  draft
+  deleted
+  deletedPublic
+  deletedByUserId
+  deletedReason
+  hideAuthor
+  authorIsUnreviewed
+  user {
+    ...UsersMinimumInfo
+    __typename
+  }
+  currentUserVote
+  currentUserExtendedVote
+  baseScore
+  extendedScore
+  score
+  voteCount
+  emojiReactors
+  af
+  afDate
+  moveToAlignmentUserId
+  afBaseScore
+  afExtendedScore
+  suggestForAlignmentUserIds
+  reviewForAlignmentUserId
+  needsReview
+  answer
+  parentAnswerId
+  retracted
+  postVersion
+  reviewedByUserId
+  shortform
+  shortformFrontpage
+  lastSubthreadActivity
+  moderatorHat
+  hideModeratorHat
+  nominatedForReview
+  reviewingForReview
+  promoted
+  promotedByUser {
+    ...UsersMinimumInfo
+    __typename
+  }
+  directChildrenCount
+  votingSystem
+  isPinnedOnProfile
+  debateResponse
+  rejected
+  rejectedReason
+  originalDialogueId
+  forumEventId
+  forumEventMetadata
+  __typename
+}
+
+fragment TagPreviewFragment on Tag {
+  ...TagBasicInfo
+  isRead
+  parentTag {
+    ...TagBasicInfo
+    __typename
+  }
+  subTags {
+    ...TagBasicInfo
+    __typename
+  }
+  description {
+    _id
+    htmlHighlight
+    __typename
+  }
+  canVoteOnRels
+  isArbitalImport
+  __typename
+}
+
+fragment TagBasicInfo on Tag {
+  _id
+  userId
+  name
+  shortName
+  slug
+  core
+  postCount
+  adminOnly
+  canEditUserIds
+  suggestedAsFilter
+  needsReview
+  descriptionTruncationCount
+  createdAt
+  wikiOnly
+  deleted
+  isSubforum
+  noindex
+  isArbitalImport
+  isPlaceholderPage
+  baseScore
+  extendedScore
+  score
+  afBaseScore
+  afExtendedScore
+  voteCount
+  currentUserVote
+  currentUserExtendedVote
+  __typename
+}
+
+fragment UsersMinimumInfo on User {
+  _id
+  slug
+  createdAt
+  username
+  displayName
+  profileImageId
+  karma
+  afKarma
+  deleted
+  isAdmin
+  htmlBio
+  jobTitle
+  organization
+  postCount
+  commentCount
+  sequenceCount
+  afPostCount
+  afCommentCount
+  spamRiskScore
+  tagRevisionCount
+  reviewedByUserId
+  __typename
+}
+
+fragment PostsMinimumInfo on Post {
+  _id
+  slug
+  title
+  draft
+  shortform
+  hideCommentKarma
+  af
+  userId
+  coauthorUserIds
+  rejected
+  collabEditorDialogue
+  __typename
+}
+
+
+
+
+VARIABLES
+
+{
+  "selector": {
+    "shortformFrontpage": {
+      "showCommunity": false,
+      "maxAgeDays": 5
+    }
+  },
+  "enableTotal": true,
+  "limit": 45
+}
+
+
