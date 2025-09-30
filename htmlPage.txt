@@ -121,7 +121,7 @@
                 "reviewBotId": "tBchiz3RM7rPwujrJ",
                 "recombee": {
                     "databaseId": "lightcone-infrastructure-lesswrong-prod-2",
-                    "publicApiToken": "sb95OJbQ7mKLQAm1abPog2m5vCPj7XqZlVYdHGyANcjzqaHT5fX6HEgB0vCfiLav",
+
                     "enabled": true
                 },
                 "taggingName": "wikitag",
@@ -178,7 +178,7 @@
                 },
                 "locale": "en-US",
                 "mapbox": {
-                    "apiKey": "pk.eyJ1IjoiaGFicnlrYSIsImEiOiJjaWxvcnhidzgwOGlodHJrbmJ2bmVmdjRtIn0.inr-_5rWOOslGQxY8iDFOA"
+
                 },
                 "petrov": {
                     "afterTime": 1727400080403,
@@ -210,11 +210,11 @@
                 },
                 "hasEvents": true,
                 "logRocket": {
-                    "apiKey": "mtnxzn/lesswrong",
+
                     "sampleDensity": 5
                 },
                 "reCaptcha": {
-                    "apiKey": "6LfFgqEUAAAAAHKdMgzGO-1BRBhHw1x6_8Ly1cXc"
+
                 },
                 "siteImage": "https://res.cloudinary.com/lesswrong-2-0/image/upload/v1654295382/new_mississippi_river_fjdmww.jpg",
                 "cloudinary": {
@@ -224,7 +224,6 @@
                     "uploadPresetSocialPreview": "nn5tppry"
                 },
                 "googleMaps": {
-                    "apiKey": "AIzaSyA3C48rl26gynG3qIuNuS-3Bh_Zz9jFXkY"
                 },
                 "adminAccount": {
                     "email": "team@lesswrong.com",
@@ -458,7 +457,7 @@
                 "moderationEmail": "team@lesswrong.com",
                 "timeDecayFactor": 1.15,
                 "googleTagManager": {
-                    "apiKey": "GTM-TRC765W"
+
                 },
                 "textReplacements": {
                     "Less Wrong": "Down Bad",
