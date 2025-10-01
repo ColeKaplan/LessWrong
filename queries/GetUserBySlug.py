@@ -11,6 +11,7 @@ def getUserBySlug(slug: str):
     query = """
     query($slug: String!) {
       GetUserBySlug(slug: $slug) {
+        _id
         displayName
         slug
         pageUrl

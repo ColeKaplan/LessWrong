@@ -7,6 +7,10 @@ def getTopActiveUsers(limit):
     query($limit: Int!) {
         SuggestedTopActiveUsers(limit: $limit) {
             results {
+                _id
+                postCount
+                commentCount
+                karma
                 displayName
                 slug
                 pageUrl
